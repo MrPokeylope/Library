@@ -6,3 +6,27 @@ table, th, td {
 th, td {
     padding: 3px 15px;
 }
+
+button {
+    margin: 10px 0 30px 10px;
+    background-color: #2bb1f9;
+    border: none;
+    border-radius: 8px;
+    width: 20vw;
+    box-shadow: 0 9px #999;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d95de
+}
+
+button:active {
+    background-color: #0d95de;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

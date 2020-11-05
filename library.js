@@ -17,9 +17,7 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
-function displayBooks() {
-
-    let table = createTable();
+function displayBooks(table) {
 
     for (let book of myLibrary) {
         let row = table.insertRow();
@@ -33,13 +31,12 @@ function displayBooks() {
             cell.appendChild(text);
         }
     }
+    if (! document.querySelector("thead")) createTableHead(table);
 }
 
-function createTable() {
-
-    let table = document.createElement("table");
-    let thead = table.createTHead();
-    let row = thead.insertRow();
+function createTableHead(table) {
+    let tHead = table.createTHead();
+    let row = tHead.insertRow();
 
     let colHeaders = [
         "Title",
@@ -54,8 +51,12 @@ function createTable() {
         th.appendChild(text);
         row.appendChild(th);
     }
+}
 
+function createTable() {
+    let table = document.createElement("table");
     document.body.appendChild(table);
+    
     return table;
 }
 
@@ -83,5 +84,7 @@ let poe = new Book(
 );
 
 myLibrary.push(mobyDick, alice, poe);
-displayBooks();
+
+let table = createTable();
+displayBooks(table);
 // console.log(myLibrary)
